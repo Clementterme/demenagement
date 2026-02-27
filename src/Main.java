@@ -5,7 +5,7 @@ public class Main {
         Scanner clavier = new Scanner(System.in);
 
         System.out.print("Saisir le nombre de cartons à transporter : ");
-
+//        Vérification du type de l'entrée
         while (!clavier.hasNextInt()) {
             System.out.println("Veuillez entrer un nombre.");
             clavier.nextLine();
@@ -13,18 +13,18 @@ public class Main {
 
         int cartons = clavier.nextInt();
 
-        Scanner clavier2 = new Scanner(System.in);
+        clavier.nextLine();
 
         System.out.print("Saisir la capacité du camion : ");
-
-        while (!clavier2.hasNextInt()) {
+//        Vérification du type de l'entrée
+        while (!clavier.hasNextInt()) {
             System.out.println("Veuillez entrer un nombre.");
-            clavier2.nextLine();
+            clavier.nextLine();
         }
 
-        int capaciteCamion = clavier2.nextInt();
-
-        while (cartons != 0) {
+        int capaciteCamion = clavier.nextInt();
+//        Affichage des messages des voyages
+        while (cartons > 0) {
             if (cartons >= capaciteCamion) {
                 System.out.println("Un voyage de " + capaciteCamion + " cartons.");
                 cartons = cartons - capaciteCamion;
@@ -35,5 +35,3 @@ public class Main {
         }
     }
 }
-
-// Entrées doivent être nombres et différents de 0
