@@ -2,32 +2,32 @@ import java.util.Scanner;
 
 public class Main {
     static void main() {
-        Scanner clavier = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.print("Saisir le nombre de cartons à transporter : ");
 //        Vérification du type de l'entrée
-        while (!clavier.hasNextInt()) {
+        while (!keyboard.hasNextInt()) {
             System.out.println("Veuillez entrer un nombre.");
-            clavier.nextLine();
+            keyboard.nextLine();
         }
 
-        int cartons = clavier.nextInt();
+        int cartons = keyboard.nextInt();
 
-        clavier.nextLine();
+        keyboard.nextLine();
 
         System.out.print("Saisir la capacité du camion : ");
 //        Vérification du type de l'entrée
-        while (!clavier.hasNextInt()) {
+        while (!keyboard.hasNextInt()) {
             System.out.println("Veuillez entrer un nombre.");
-            clavier.nextLine();
+            keyboard.nextLine();
         }
-
-        int capaciteCamion = clavier.nextInt();
+        
+        int truckCapacity = keyboard.nextInt();
 //        Affichage des messages des voyages
         while (cartons > 0) {
-            if (cartons >= capaciteCamion) {
-                System.out.println("Un voyage de " + capaciteCamion + " cartons.");
-                cartons = cartons - capaciteCamion;
+            if (cartons >= truckCapacity) {
+                System.out.println("Un voyage de " + truckCapacity + " cartons.");
+                cartons = cartons - truckCapacity;
             } else {
                 System.out.println("Un voyage de " + cartons + " cartons.");
                 cartons = 0;
